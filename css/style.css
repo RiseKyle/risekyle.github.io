@@ -2320,7 +2320,7 @@ pre .css ~ * .id {
 }
 form input.st-search-input_my {
   font-size: 12px;
-  padding: 4px 1px 4px 50px;
+  padding: 4px 1px 10px 27px;
   height: 20px;
   width: 190px;
   color: #666;
