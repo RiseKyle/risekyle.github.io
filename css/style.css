@@ -249,6 +249,7 @@ a {
   background-color: #000;
   position: absolute;
   opacity: 0.7;
+  z-index: -1;
 }
 #container .left-col .intrude-less {
   width: 76%;
@@ -2317,7 +2318,7 @@ pre .css ~ * .id {
 .search label {
   display: none;
 }
-form input.st-default-search-input {
+form input.st-search-input_my {
   font-size: 12px;
   padding: 4px 9px 4px 27px;
   height: 20px;
