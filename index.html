@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/">
-            <time datetime="2017-01-16T06:12:08.594Z" itemprop="datePublished">2017-01-16</time>
+            <time datetime="2017-01-16T06:15:11.890Z" itemprop="datePublished">2017-01-16</time>
         </a>
     </div>
 
@@ -286,7 +286,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>1000/i &lt;= j</p>
 </blockquote>
-<p>所以区间最小值应该在 <code>j + 1</code> 和 <code>1000 / i</code> 中取最大值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from = Math.max(1000 / i, i + 1);</span><br></pre></td></tr></table></figure></p>
+<p>所以区间最小值应该在 <code>j + 1</code> 和 <code>1000 / i</code> 中取最大值：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from = Math.max(<span class="number">1000</span> / i, i + <span class="number">1</span>);</span><br></pre></td></tr></table></figure></p>
 <p>因 <code>j &lt; 100</code> 且 <code>j &lt; 10000 / i</code></p>
 <p>当 <code>100 &lt; 10000 / i</code> 时：</p>
 <blockquote>
@@ -296,7 +296,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>j &lt; 1000 / i</p>
 </blockquote>
-<p>所以区间最大值应在 <code>100</code> 和 <code>10000 / i</code> 中取最小值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//			to = Math.min(10000 / i, 100);</span><br></pre></td></tr></table></figure></p>
+<p>所以区间最大值应在 <code>100</code> 和 <code>10000 / i</code> 中取最小值：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//			to = Math.min(10000 / i, 100);</span></span><br></pre></td></tr></table></figure></p>
 <p>为什么这句可以注销呢？</p>
 <p>因 <code>i &lt; 100</code>，所以100 永远小于 10000 / i。<br>得出:</p>
 <blockquote>
@@ -307,7 +307,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>末尾两位不能为0</p>
 </blockquote>
-<p>所以能整除100的就过滤掉：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i_val % 100 == 0</span><br></pre></td></tr></table></figure></p>
+<p>所以能整除100的就过滤掉：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i_val % <span class="number">100</span> == <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
 <p>假设：</p>
 <blockquote>
 <p>i_val = 1000 * a + 100 * b + 10 * c + d<br>i_val = i * j<br>i = 10 * a + b<br>j = 10 * c + d</p>
@@ -316,7 +316,7 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>i_val - i - j = 990 * a + 99 * b = 9 * (110 * a + 11 * b)</p>
 </blockquote>
-<p>所以 <code>i_val - i - j</code> 一定能被9整除，不能整除的就过滤掉：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(i_val - i - j) % 9 != 0</span><br></pre></td></tr></table></figure></p>
+<p>所以 <code>i_val - i - j</code> 一定能被9整除，不能整除的就过滤掉：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(i_val - i - j) % <span class="number">9</span> != <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
 <p>从结果可以看出，该算法循环次数仅为232次，的确是非常高效率的一个精致的小算法，值得品味和学习。<br>注：以上解析均为个人理解，如有不妥或错误望指正。同时，有不理解的地方请评论或联系我。</p>
 
@@ -769,7 +769,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a></p>
                             <p class="item-title"><a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/" class="title">Java 吸血鬼数字（高效版详解）</a></p>
-                            <p class="item-date"><time datetime="2017-01-16T06:12:08.594Z" itemprop="datePublished">2017-01-16</time></p>
+                            <p class="item-date"><time datetime="2017-01-16T06:15:11.890Z" itemprop="datePublished">2017-01-16</time></p>
                         </div>
                     </li>
                 
