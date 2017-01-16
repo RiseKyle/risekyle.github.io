@@ -167,11 +167,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                2
+                3
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                6
+                9
                 <span>标签</span>
             </div>
         </div>
@@ -214,6 +214,189 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-Java 吸血鬼数字（高效版详解）" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/01/16/Java 吸血鬼数字（高效版详解）/">Java 吸血鬼数字（高效版详解）</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/">
+            <time datetime="2017-01-16T04:51:28.653Z" itemprop="datePublished">2017-01-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/吸血鬼数字/">吸血鬼数字</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><strong>先来看题</strong></p>
+<hr>
+<p><strong>吸血鬼数字</strong>是指位数为偶数的数字，可以由一堆数字相乘而得到，而这对数字各包含乘积的一半位数的数字，其中从最初的数字中选取的数字可以任意排序。以两个0结尾的数字是不允许的，例如，下列数字都是“吸血鬼”数字：<br>1260 = 21 <em> 60<br>1827 = 21 </em> 87<br>2187 = 27 * 81<br>写出一个程序，找出4位数的所有吸血鬼数字。</p>
+<p><strong>再看代码</strong></p>
+<hr>
+<p>实现方法有很多种，我主要解析一下网上流传的不知是哪位大牛写的高效率版本。<br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">public class VampireNum &#123;</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		String[] ar_str1, ar_str2;</span><br><span class="line">		int sum = 0;</span><br><span class="line">		int from;</span><br><span class="line">		int to;</span><br><span class="line">		int i_val;</span><br><span class="line">		int count = 0;</span><br><span class="line">		//双重循环穷举</span><br><span class="line">		for (int i = 10; i &lt; 100; i++) &#123;</span><br><span class="line">			//j=i+1避免重复</span><br><span class="line">			from = Math.max(1000 / i, i + 1);</span><br><span class="line">//			to = Math.min(10000 / i, 100);</span><br><span class="line">			for (int j = from; j &lt; 100; j++) &#123;</span><br><span class="line">				i_val = i * j;</span><br><span class="line">				//如果对100取余等于0，则该4位数位数为00，不符合要求</span><br><span class="line">				//或i_val-i-j对9取余不等于0，也不符合要求</span><br><span class="line">				//不符合要求就从新开始循环，继续查找</span><br><span class="line">				if (i_val % 100 == 0 || (i_val - i - j) % 9 != 0) &#123;</span><br><span class="line">					continue;</span><br><span class="line">				&#125;</span><br><span class="line">				count++;</span><br><span class="line">				//将i_val转换成字符串，然后排序，并进行比较，如果比较结果相等，进行sum+1</span><br><span class="line">				ar_str1 = String.valueOf(i_val).split(&quot;&quot;);</span><br><span class="line">				ar_str2 = (String.valueOf(i) + String.valueOf(j)).split(&quot;&quot;);</span><br><span class="line">				Arrays.sort(ar_str1);	</span><br><span class="line">				Arrays.sort(ar_str2);</span><br><span class="line">				if (Arrays.equals(ar_str1, ar_str2)) &#123;</span><br><span class="line">					sum++;</span><br><span class="line">					System.out.println(&quot;第&quot; + sum + &quot;组: &quot; + i + &quot; * &quot; + j + &quot; = &quot; + i_val);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;共找到&quot; + sum + &quot;组吸血鬼数&quot;);</span><br><span class="line">		System.out.println(count);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>运行结果</strong></p>
+<hr>
+<blockquote>
+<p>第1组: 15 <em> 93 = 1395<br>第2组: 21 </em> 60 = 1260<br>第3组: 21 <em> 87 = 1827<br>第4组: 27 </em> 81 = 2187<br>第5组: 30 <em> 51 = 1530<br>第6组: 35 </em> 41 = 1435<br>第7组: 80 * 86 = 6880<br>共找到7组吸血鬼数 232</p>
+</blockquote>
+<p><strong>解析</strong></p>
+<hr>
+<p>因：</p>
+<blockquote>
+<p>吸血鬼数字是四位数的。</p>
+</blockquote>
+<p>得出取值范围：</p>
+<blockquote>
+<p>10 &lt;= i &lt; 100<br>10 &lt;= j &lt; 100<br>1000 &lt;= i * j &lt; 10000<br>1000 / i &lt;= j &lt; 10000/i</p>
+</blockquote>
+<p>为避免重复，<code>j</code> 的起始值应等于 <code>i + 1</code>:</p>
+<blockquote>
+<p>i + 1 &lt; = j</p>
+</blockquote>
+<p>当 <code>1000 / i &lt; i+1</code> 时:</p>
+<blockquote>
+<p>i +1 &lt;= j</p>
+</blockquote>
+<p>当 <code>1000 / i &gt; i+1</code> 时:</p>
+<blockquote>
+<p>1000/i &lt;= j</p>
+</blockquote>
+<p>所以区间最小值应该在 <code>j + 1</code> 和 <code>1000 / i</code> 中取最大值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from = Math.max(1000 / i, i + 1);</span><br></pre></td></tr></table></figure></p>
+<p>因：</p>
+<blockquote>
+<p>j &lt; 100</p>
+</blockquote>
+<p>且：</p>
+<blockquote>
+<p>j &lt; 10000 / i</p>
+</blockquote>
+<p>当 <code>100 &lt; 10000 / i</code> 时：</p>
+<blockquote>
+<p>j &lt; 100</p>
+</blockquote>
+<p>当 <code>100 &gt; 1000 / i</code> 时：</p>
+<blockquote>
+<p>j &lt; 1000 / i</p>
+</blockquote>
+<p>所以区间最大值应在 <code>100</code> 和 <code>10000 / i</code> 中取最小值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//			to = Math.min(10000 / i, 100);</span><br></pre></td></tr></table></figure></p>
+<p>为什么这句可以注销呢？<br>因：</p>
+<blockquote>
+<p>i &lt; 100</p>
+</blockquote>
+<p>所以：</p>
+<blockquote>
+<p>100 永远小于 10000 / i</p>
+</blockquote>
+<p>得出:</p>
+<blockquote>
+<p>j 始终小于 100。</p>
+</blockquote>
+<p>再看看代码的主体算法部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i_val % 100 == 0 || (i_val - i - j) % 9 != 0</span><br></pre></td></tr></table></figure></p>
+<p>因:</p>
+<blockquote>
+<p>末尾两位不能为0</p>
+</blockquote>
+<p>所以能整除100的就过滤掉：</p>
+<blockquote>
+<p>i_val % 100 == 0 </p>
+</blockquote>
+<p>因：</p>
+<blockquote>
+<p>i_val = 1000 <em> a + 100 </em> b + 10 <em> c + d<br>i_val = i </em> j<br>i = 10 <em> a + b<br>j = 10 </em> c + d<br>i_val - i - j = 990 <em> a + 99 </em> b = 9 <em> (110 </em> a + 11 * b)</p>
+</blockquote>
+<p>所以 <code>i_val - i - j</code> 一定能被9整除，不能整除的就过滤掉：</p>
+<blockquote>
+<p>(i_val - i - j) % 9 != 0</p>
+</blockquote>
+<p><strong>总结</strong></p>
+<hr>
+<p>从结果可以看出，该算法循环次数仅为232次，的确是非常高效率的一个精致的小算法，值得品味和学习。<br>注：以上解析均为个人理解，如有不妥或错误望指正。同时，有不理解的地方请评论或联系我。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://risekyle.github.io/2017/01/16/Java 吸血鬼数字（高效版详解）/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://risekyle.github.io/2017/01/16/Java 吸血鬼数字（高效版详解）/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-简洁强大的 Hexo 主题 Icarus" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -595,6 +778,25 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a></p>
+                            <p class="item-title"><a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/" class="title">Java 吸血鬼数字（高效版详解）</a></p>
+                            <p class="item-date"><time datetime="2017-01-16T04:51:28.653Z" itemprop="datePublished">2017-01-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/01/12/简洁强大的 Hexo 主题 Icarus/" class="thumbnail">
     
     
@@ -639,7 +841,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/github-搬运/">github 搬运</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/github-搬运/">github 搬运</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构与算法/">数据结构与算法</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -648,7 +850,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -657,7 +859,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内容/">内容</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搬运/">搬运</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建/">搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内容/">内容</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吸血鬼数字/">吸血鬼数字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搬运/">搬运</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建/">搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -666,7 +868,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/搬运/" style="font-size: 10px;">搬运</a> <a href="/tags/搭建/" style="font-size: 10px;">搭建</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a>
+            <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/吸血鬼数字/" style="font-size: 10px;">吸血鬼数字</a> <a href="/tags/搬运/" style="font-size: 10px;">搬运</a> <a href="/tags/搭建/" style="font-size: 10px;">搭建</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
         </div>
     </div>
 
