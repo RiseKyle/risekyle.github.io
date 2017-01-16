@@ -17,7 +17,7 @@
 吸血鬼数字是指位数为偶数的数字，可以由一堆数字相乘而得到，而这对数字各包含乘积的一半位数的数字，其中从最初的数字中选取的数字可以任意排序。以两个0结尾的数字是不允许的，例如，下列数字都是“吸血鬼”数字：1260 = 21 * 601827 = 21 * 872187 = 27 * 81写出一个程序，找出4位数的所有吸血鬼数字。
 再看代码
 实现方法有很多种，我主要解析一下网上流传的不知是哪">
-<meta property="og:updated_time" content="2017-01-16T05:33:38.364Z">
+<meta property="og:updated_time" content="2017-01-16T05:42:55.157Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 吸血鬼数字（高效版详解）">
 <meta name="twitter:description" content="先来看题
@@ -241,7 +241,7 @@ var _hmt = _hmt || [];
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/">
-            <time datetime="2017-01-16T05:33:33.302Z" itemprop="datePublished">2017-01-16</time>
+            <time datetime="2017-01-16T05:42:49.928Z" itemprop="datePublished">2017-01-16</time>
         </a>
     </div>
 
@@ -313,14 +313,18 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>再看看代码的主体算法部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i_val % 100 == 0 || (i_val - i - j) % 9 != 0</span><br></pre></td></tr></table></figure></p>
 <p>因:</p>
+<blockquote>
 <p>末尾两位不能为0</p>
+</blockquote>
 <p>所以能整除100的就过滤掉：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i_val % 100 == 0</span><br></pre></td></tr></table></figure></p>
 <p>假设：</p>
 <blockquote>
 <p>i_val = 1000 * a + 100 * b + 10 * c + d<br>i_val = i * j<br>i = 10 * a + b<br>j = 10 * c + d</p>
 </blockquote>
 <p>得出：</p>
+<blockquote>
 <p>i_val - i - j = 990 * a + 99 * b = 9 * (110 * a + 11 * b)</p>
+</blockquote>
 <p>所以 <code>i_val - i - j</code> 一定能被9整除，不能整除的就过滤掉：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(i_val - i - j) % 9 != 0</span><br></pre></td></tr></table></figure></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
 <p>从结果可以看出，该算法循环次数仅为232次，的确是非常高效率的一个精致的小算法，值得品味和学习。<br>注：以上解析均为个人理解，如有不妥或错误望指正。同时，有不理解的地方请评论或联系我。</p>
@@ -464,7 +468,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a></p>
                             <p class="item-title"><a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/" class="title">Java 吸血鬼数字（高效版详解）</a></p>
-                            <p class="item-date"><time datetime="2017-01-16T05:33:33.302Z" itemprop="datePublished">2017-01-16</time></p>
+                            <p class="item-date"><time datetime="2017-01-16T05:42:49.928Z" itemprop="datePublished">2017-01-16</time></p>
                         </div>
                     </li>
                 
