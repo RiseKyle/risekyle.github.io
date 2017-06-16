@@ -167,11 +167,11 @@ var _hmt = _hmt || [];
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                3
+                4
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                9
+                10
                 <span>标签</span>
             </div>
         </div>
@@ -214,6 +214,122 @@ var _hmt = _hmt || [];
 
             
             <section id="main">
+    <article id="post-八大排序算法（一）—— 直接插入排序" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2017/06/16/八大排序算法（一）—— 直接插入排序/">八大排序算法（一）—— 直接插入排序</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/06/16/八大排序算法（一）—— 直接插入排序/">
+            <time datetime="2017-06-16T08:44:11.636Z" itemprop="datePublished">2017-06-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/排序/">排序</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><hr>
+<p>本系列博客一共8篇，讲解常用的8种排序算法：直接插入排序、希尔排序（最小增量排序）、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、分配排序（基数排序）。8种排序方式的基本关系如下图所示：<img src="http://7xtn8q.com1.z0.glb.clouddn.com/1342514529_5795.jpg" alt="排序算法基本关系"></p>
+<p>8种排序方式的时间复杂度、空间复杂度、稳定性等如下图所示：<img src="http://7xtn8q.com1.z0.glb.clouddn.com/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF.jpg" alt="排序算法基本信息"></p>
+<p>本篇博客主要讲解直接插入排序算法的基本思想和Java代码实现。</p>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><hr>
+<p>将一个记录插入到已经排好序的序列中。先将序列的第一个记录看作是有序的子序列，再把第二个记录与第一个记录进行比较，然后再进行插入操作，以此类推，不断循环，直到最后一个记录插入，整个序列的排序工作就完成了。<br>如下图所示，先将49作为第一个有序子序列，与后一个记录38进行比较，然后插入，形成新的子序列（38 49），再把后一个记录，插入新的子序列中，又形成新的子序列，直到最后一个记录49插入到序列中，排序完成：<img src="http://7xtn8q.com1.z0.glb.clouddn.com/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E5%9B%BE.jpg" alt="直接插入排序基本思想"></p>
+<p>##Java 代码实现：</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * FileName:StraightInsertSort.java</span><br><span class="line"> * 创建一个直接插入排序类，实现一个直接插入排序方法和一个打印输出方法</span><br><span class="line"> * 直接插入排序：先将序列的第1个记录看成是一个有序的子序列，</span><br><span class="line"> * 再从第2个记录逐个进行插入，</span><br><span class="line"> * 直至整个序列有序为止</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> kylezhang</span><br><span class="line"> * <span class="doctag">@date</span> 2017/03/08</span><br><span class="line"> * </span><br><span class="line"> * </span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StraightInsertSort</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//长度为10的数组</span></span><br><span class="line">		<span class="keyword">int</span>[] c = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">		Random rd = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">	<span class="comment">//随机生成数组	</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</span><br><span class="line">			c[i] = rd.nextInt(<span class="number">10</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		StraightInsertSort sis = <span class="keyword">new</span> StraightInsertSort();</span><br><span class="line">		System.out.print(<span class="string">"原序列:"</span>);</span><br><span class="line">		sis.print(c); </span><br><span class="line">		sis.straightInsertSort(c);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.print(<span class="string">"排序后:"</span>);</span><br><span class="line">		sis.print(c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 遍历数组，并打印输出</span><br><span class="line">	 * </span><br><span class="line">	 * <span class="doctag">@param</span> a 需要打印输出的数组</span><br><span class="line">	 * </span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> b : a) &#123;</span><br><span class="line">			System.out.print(b + <span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 实现直接插入排序操作</span><br><span class="line">	 * </span><br><span class="line">	 * <span class="doctag">@param</span> a 需要进行直接插入排序操作的数组</span><br><span class="line">	 * </span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">straightInsertSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">	<span class="comment">//从第二个记录开始遍历数组，即 i = 1 处。</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">		<span class="comment">//如果小于前一个记录，则插入到前一个记录前面，</span></span><br><span class="line">		<span class="comment">//否则不用处理，直接插入前一个有序子数组的后面</span></span><br><span class="line">			<span class="keyword">if</span>(a[i] &lt; a[i-<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="keyword">int</span> j;</span><br><span class="line">				<span class="keyword">int</span> x;   <span class="comment">//用于插入</span></span><br><span class="line">				x = a[i];</span><br><span class="line">				</span><br><span class="line">				<span class="comment">//从后向前遍历前一个有序子数组</span></span><br><span class="line">				<span class="comment">//，直到上一个有序子数组已经遍历完且</span></span><br><span class="line">				<span class="comment">//找到合适的插入位置,跳出循环</span></span><br><span class="line">				<span class="keyword">for</span>(j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; x &lt; a[j]; j--) &#123;</span><br><span class="line">					a[j+<span class="number">1</span>] = a[j]; <span class="comment">//每次遍历都将数组后移一位</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//当跳出循环时有两种可能，第一，当 a[j] &gt;= x 时，</span></span><br><span class="line">				<span class="comment">//则将 x 插入 a[j] 的后一个位置；第二，当 j &lt; 0 时</span></span><br><span class="line">				<span class="comment">//，此时上一个有序子数组已经遍历完，所有记录都大于</span></span><br><span class="line">				<span class="comment">//需要插入的数，则直接将 x 插入到上一个数组的第一个</span></span><br><span class="line">				<span class="comment">//位置。</span></span><br><span class="line">				a[j+<span class="number">1</span>] = x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><hr>
+<blockquote>
+<p>原序列:8 5 3 1 1 9 8 0 2 7<br>排序后:0 1 1 2 3 5 7 8 8 9</p>
+</blockquote>
+<p>结果仅供参考，因为采用的随机数组，所以每个人运行的结果应该是不一样的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
+<p>代码中的注释已经把代码解释的非常详细了，如果还有不理解的地方欢迎在文章下方评论或戳博客中的联系方式联系我。<br>注：以上解析均为个人理解，如有不妥或错误望指正。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://risekyle.github.io/2017/06/16/八大排序算法（一）—— 直接插入排序/#comments" class="article-comment-link ds-thread-count" data-thread-key="http://risekyle.github.io/2017/06/16/八大排序算法（一）—— 直接插入排序/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Java 吸血鬼数字（高效版详解）" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -757,6 +873,25 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2017/06/16/八大排序算法（一）—— 直接插入排序/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a></p>
+                            <p class="item-title"><a href="/2017/06/16/八大排序算法（一）—— 直接插入排序/" class="title">八大排序算法（一）—— 直接插入排序</a></p>
+                            <p class="item-date"><time datetime="2017-06-16T08:44:11.636Z" itemprop="datePublished">2017-06-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/01/16/Java 吸血鬼数字（高效版详解）/" class="thumbnail">
     
     
@@ -820,7 +955,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/github-搬运/">github 搬运</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构与算法/">数据结构与算法</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/github-搬运/">github 搬运</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构与算法/">数据结构与算法</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -829,7 +964,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -838,7 +973,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内容/">内容</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吸血鬼数字/">吸血鬼数字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搬运/">搬运</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建/">搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内容/">内容</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吸血鬼数字/">吸血鬼数字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搬运/">搬运</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建/">搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -847,7 +982,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/吸血鬼数字/" style="font-size: 10px;">吸血鬼数字</a> <a href="/tags/搬运/" style="font-size: 10px;">搬运</a> <a href="/tags/搭建/" style="font-size: 10px;">搭建</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a>
+            <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/吸血鬼数字/" style="font-size: 10px;">吸血鬼数字</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/搬运/" style="font-size: 10px;">搬运</a> <a href="/tags/搭建/" style="font-size: 10px;">搭建</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a>
         </div>
     </div>
 
