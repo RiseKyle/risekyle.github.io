@@ -3,37 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>八大排序算法（一）—— 直接插入排序 | RiseKyle</title>
+    <title>Java自动拆装箱机制 | RiseKyle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="概述
-本系列博客一共8篇，讲解常用的8种排序算法：直接插入排序、希尔排序（最小增量排序）、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、分配排序（基数排序）。8种排序方式的基本关系如下图所示：
-8种排序方式的时间复杂度、空间复杂度、稳定性等如下图所示：
-本篇博客主要讲解直接插入排序算法的基本思想和Java代码实现。
-基本思想
-将一个记录插入到已经排好序的序列中。先将序列的第一个记录看作是有序">
+Java自动拆装箱机制从Java 1.5开始引入，目的是将原始类型值转换成对应的对象。在自动拆装箱机制引入前，由于Java不允许直接向集合类（Connections）中放入原始类型值，只能接收对象。通常这种情况下的做法是，将原始类型值转换为对象，然后将这些对象放入集合中。为了让代码更为简洁，Java 1.5引入了自动拆装箱机制，但该机制并非完美，如果有些细节问题不注意，会引起难以察觉的bug">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八大排序算法（一）—— 直接插入排序">
-<meta property="og:url" content="http://risekyle.github.io/2017/06/16/八大排序算法（一）—— 直接插入排序/index.html">
+<meta property="og:title" content="Java自动拆装箱机制">
+<meta property="og:url" content="http://risekyle.github.io/2017/07/05/Java自动拆装箱机制/index.html">
 <meta property="og:site_name" content="RiseKyle">
 <meta property="og:description" content="概述
-本系列博客一共8篇，讲解常用的8种排序算法：直接插入排序、希尔排序（最小增量排序）、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、分配排序（基数排序）。8种排序方式的基本关系如下图所示：
-8种排序方式的时间复杂度、空间复杂度、稳定性等如下图所示：
-本篇博客主要讲解直接插入排序算法的基本思想和Java代码实现。
-基本思想
-将一个记录插入到已经排好序的序列中。先将序列的第一个记录看作是有序">
-<meta property="og:image" content="http://7xtn8q.com1.z0.glb.clouddn.com/1342514529_5795.jpg">
-<meta property="og:image" content="http://7xtn8q.com1.z0.glb.clouddn.com/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF.jpg">
-<meta property="og:image" content="http://7xtn8q.com1.z0.glb.clouddn.com/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E5%9B%BE.jpg">
-<meta property="og:updated_time" content="2017-06-16T08:45:15.205Z">
+Java自动拆装箱机制从Java 1.5开始引入，目的是将原始类型值转换成对应的对象。在自动拆装箱机制引入前，由于Java不允许直接向集合类（Connections）中放入原始类型值，只能接收对象。通常这种情况下的做法是，将原始类型值转换为对象，然后将这些对象放入集合中。为了让代码更为简洁，Java 1.5引入了自动拆装箱机制，但该机制并非完美，如果有些细节问题不注意，会引起难以察觉的bug">
+<meta property="og:updated_time" content="2017-07-05T08:32:56.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="八大排序算法（一）—— 直接插入排序">
+<meta name="twitter:title" content="Java自动拆装箱机制">
 <meta name="twitter:description" content="概述
-本系列博客一共8篇，讲解常用的8种排序算法：直接插入排序、希尔排序（最小增量排序）、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、分配排序（基数排序）。8种排序方式的基本关系如下图所示：
-8种排序方式的时间复杂度、空间复杂度、稳定性等如下图所示：
-本篇博客主要讲解直接插入排序算法的基本思想和Java代码实现。
-基本思想
-将一个记录插入到已经排好序的序列中。先将序列的第一个记录看作是有序">
-<meta name="twitter:image" content="http://7xtn8q.com1.z0.glb.clouddn.com/1342514529_5795.jpg">
+Java自动拆装箱机制从Java 1.5开始引入，目的是将原始类型值转换成对应的对象。在自动拆装箱机制引入前，由于Java不允许直接向集合类（Connections）中放入原始类型值，只能接收对象。通常这种情况下的做法是，将原始类型值转换为对象，然后将这些对象放入集合中。为了让代码更为简洁，Java 1.5引入了自动拆装箱机制，但该机制并非完美，如果有些细节问题不注意，会引起难以察觉的bug">
     
 
     
@@ -233,7 +217,7 @@ var _hmt = _hmt || [];
 </aside>
 
             
-            <section id="main"><article id="post-八大排序算法（一）—— 直接插入排序" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Java自动拆装箱机制" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -241,7 +225,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 class="article-title" itemprop="name">
-            八大排序算法（一）—— 直接插入排序
+            Java自动拆装箱机制
         </h1>
     
 
@@ -250,8 +234,8 @@ var _hmt = _hmt || [];
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2017/06/16/八大排序算法（一）—— 直接插入排序/">
-            <time datetime="2017-06-16T08:44:11.636Z" itemprop="datePublished">2017-06-16</time>
+        <a href="/2017/07/05/Java自动拆装箱机制/">
+            <time datetime="2017-07-05T08:32:28.000Z" itemprop="datePublished">2017-07-05</time>
         </a>
     </div>
 
@@ -259,13 +243,13 @@ var _hmt = _hmt || [];
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a>
+        <a class="article-category-link" href="/categories/Java进阶之路/">Java进阶之路</a>
     </div>
 
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Java/">Java</a>, <a class="tag-link" href="/tags/排序/">排序</a>, <a class="tag-link" href="/tags/算法/">算法</a>
+        <a class="tag-link" href="/tags/自动拆装箱/">自动拆装箱</a>, <a class="tag-link" href="/tags/进阶/">进阶</a>
     </div>
 
                     </div>
@@ -277,21 +261,34 @@ var _hmt = _hmt || [];
         
             
             <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><hr>
-<p>本系列博客一共8篇，讲解常用的8种排序算法：直接插入排序、希尔排序（最小增量排序）、简单选择排序、堆排序、冒泡排序、快速排序、归并排序、分配排序（基数排序）。8种排序方式的基本关系如下图所示：<img src="http://7xtn8q.com1.z0.glb.clouddn.com/1342514529_5795.jpg" alt="排序算法基本关系"></p>
-<p>8种排序方式的时间复杂度、空间复杂度、稳定性等如下图所示：<img src="http://7xtn8q.com1.z0.glb.clouddn.com/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF.jpg" alt="排序算法基本信息"></p>
-<p>本篇博客主要讲解直接插入排序算法的基本思想和Java代码实现。</p>
-<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><hr>
-<p>将一个记录插入到已经排好序的序列中。先将序列的第一个记录看作是有序的子序列，再把第二个记录与第一个记录进行比较，然后再进行插入操作，以此类推，不断循环，直到最后一个记录插入，整个序列的排序工作就完成了。<br>如下图所示，先将49作为第一个有序子序列，与后一个记录38进行比较，然后插入，形成新的子序列（38 49），再把后一个记录，插入新的子序列中，又形成新的子序列，直到最后一个记录49插入到序列中，排序完成：<img src="http://7xtn8q.com1.z0.glb.clouddn.com/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E5%9B%BE.jpg" alt="直接插入排序基本思想"></p>
-<p>##Java 代码实现：</p>
-<hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * FileName:StraightInsertSort.java</span><br><span class="line"> * 创建一个直接插入排序类，实现一个直接插入排序方法和一个打印输出方法</span><br><span class="line"> * 直接插入排序：先将序列的第1个记录看成是一个有序的子序列，</span><br><span class="line"> * 再从第2个记录逐个进行插入，</span><br><span class="line"> * 直至整个序列有序为止</span><br><span class="line"> * </span><br><span class="line"> * <span class="doctag">@author</span> kylezhang</span><br><span class="line"> * <span class="doctag">@date</span> 2017/03/08</span><br><span class="line"> * </span><br><span class="line"> * </span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StraightInsertSort</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//长度为10的数组</span></span><br><span class="line">		<span class="keyword">int</span>[] c = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">		Random rd = <span class="keyword">new</span> Random(<span class="number">47</span>);</span><br><span class="line">	<span class="comment">//随机生成数组	</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; c.length; i++) &#123;</span><br><span class="line">			c[i] = rd.nextInt(<span class="number">10</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		StraightInsertSort sis = <span class="keyword">new</span> StraightInsertSort();</span><br><span class="line">		System.out.print(<span class="string">"原序列:"</span>);</span><br><span class="line">		sis.print(c); </span><br><span class="line">		sis.straightInsertSort(c);</span><br><span class="line">		System.out.println();</span><br><span class="line">		System.out.print(<span class="string">"排序后:"</span>);</span><br><span class="line">		sis.print(c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 遍历数组，并打印输出</span><br><span class="line">	 * </span><br><span class="line">	 * <span class="doctag">@param</span> a 需要打印输出的数组</span><br><span class="line">	 * </span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> b : a) &#123;</span><br><span class="line">			System.out.print(b + <span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/**</span><br><span class="line">	 * 实现直接插入排序操作</span><br><span class="line">	 * </span><br><span class="line">	 * <span class="doctag">@param</span> a 需要进行直接插入排序操作的数组</span><br><span class="line">	 * </span><br><span class="line">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">straightInsertSort</span><span class="params">(<span class="keyword">int</span> a[])</span> </span>&#123;</span><br><span class="line">	<span class="comment">//从第二个记录开始遍历数组，即 i = 1 处。</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">		<span class="comment">//如果小于前一个记录，则插入到前一个记录前面，</span></span><br><span class="line">		<span class="comment">//否则不用处理，直接插入前一个有序子数组的后面</span></span><br><span class="line">			<span class="keyword">if</span>(a[i] &lt; a[i-<span class="number">1</span>]) &#123;</span><br><span class="line">				<span class="keyword">int</span> j;</span><br><span class="line">				<span class="keyword">int</span> x;   <span class="comment">//用于插入</span></span><br><span class="line">				x = a[i];</span><br><span class="line">				</span><br><span class="line">				<span class="comment">//从后向前遍历前一个有序子数组</span></span><br><span class="line">				<span class="comment">//，直到上一个有序子数组已经遍历完且</span></span><br><span class="line">				<span class="comment">//找到合适的插入位置,跳出循环</span></span><br><span class="line">				<span class="keyword">for</span>(j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; x &lt; a[j]; j--) &#123;</span><br><span class="line">					a[j+<span class="number">1</span>] = a[j]; <span class="comment">//每次遍历都将数组后移一位</span></span><br><span class="line">				&#125;</span><br><span class="line">				<span class="comment">//当跳出循环时有两种可能，第一，当 a[j] &gt;= x 时，</span></span><br><span class="line">				<span class="comment">//则将 x 插入 a[j] 的后一个位置；第二，当 j &lt; 0 时</span></span><br><span class="line">				<span class="comment">//，此时上一个有序子数组已经遍历完，所有记录都大于</span></span><br><span class="line">				<span class="comment">//需要插入的数，则直接将 x 插入到上一个数组的第一个</span></span><br><span class="line">				<span class="comment">//位置。</span></span><br><span class="line">				a[j+<span class="number">1</span>] = x;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><hr>
-<blockquote>
-<p>原序列:8 5 3 1 1 9 8 0 2 7<br>排序后:0 1 1 2 3 5 7 8 8 9</p>
-</blockquote>
-<p>结果仅供参考，因为采用的随机数组，所以每个人运行的结果应该是不一样的。</p>
+<p>Java自动拆装箱机制从Java 1.5开始引入，目的是将原始类型值转换成对应的对象。<br>在自动拆装箱机制引入前，由于Java不允许直接向集合类（Connections）中放入原始类型值，只能接收对象。通常这种情况下的做法是，将原始类型值转换为对象，然后将这些对象放入集合中。为了让代码更为简洁，Java 1.5引入了自动拆装箱机制，但该机制并非完美，如果有些细节问题不注意，会引起难以察觉的bug。有很多公司笔试题也爱考相关的问题，博主最近在准备应聘，所以就来好好谈谈这个自动拆装机制。</p>
+<h2 id="什么是自动装箱和拆箱"><a href="#什么是自动装箱和拆箱" class="headerlink" title="什么是自动装箱和拆箱"></a>什么是自动装箱和拆箱</h2><hr>
+<p>自动装箱就是Java自动将原始类型值转换成对应的对象，比如将int的变量转换成Integer对象，这个过程叫做装箱，反之将Integer对象转换成int类型值，这个过程叫做拆箱。因为这里的装箱和拆箱是自动进行的非人为转换，所以就称作为自动装箱和拆箱。<br>原始类型：byte,short,char,int,long,float,double,boolean<br>对应的封装类分别为：Byte,Short,Character,Integer,Long,Float,Double,Boolean。</p>
+<h2 id="什么时候发生自动拆装箱"><a href="#什么时候发生自动拆装箱" class="headerlink" title="什么时候发生自动拆装箱"></a>什么时候发生自动拆装箱</h2><hr>
+<p><strong>赋值时</strong></p>
+<p>这是最常见的一种情况。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//before autoboxing</span></span><br><span class="line">Integer iObject = Integer.valueOf(<span class="number">3</span>);</span><br><span class="line">Int iPrimitive = iObject.intValue()</span><br><span class="line"> </span><br><span class="line"><span class="comment">//after java5</span></span><br><span class="line">Integer iObject = <span class="number">3</span>; <span class="comment">//autobxing - primitive to wrapper conversion</span></span><br><span class="line"><span class="keyword">int</span> iPrimitive = iObject; <span class="comment">//unboxing - object to primitive conversion</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>方法调用时</strong></p>
+<p>方法调用时，传入的参数编译器会帮我们转换，个人认为传参的过程就是赋值的过程，所以这种情况和赋值时发生的自动拆装箱本质上应该是相同的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">show</span><span class="params">(Integer iParam)</span> </span>&#123;</span><br><span class="line">   System.out.println(<span class="string">"autoboxing example - method invocation i: "</span> + iParam);</span><br><span class="line">   <span class="keyword">return</span> iParam;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//autoboxing and unboxing in method invocation</span></span><br><span class="line">show(<span class="number">3</span>); <span class="comment">//autoboxing</span></span><br><span class="line"><span class="keyword">int</span> result = show(<span class="number">3</span>); <span class="comment">//unboxing because return type of method is Integer</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="自动装箱的弊端"><a href="#自动装箱的弊端" class="headerlink" title="自动装箱的弊端"></a>自动装箱的弊端</h2><hr>
+<p>自动装箱的过程会创建对象，如果在循环中不断的执行自动装箱，就会创建多余的对象，影响程序性能。如下面例子所示：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Integer sum = <span class="number">0</span>;</span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1000</span>; i&lt;<span class="number">5000</span>; i++) &#123;</span><br><span class="line">   sum+=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码 sum+=i 可以看成 sum = sum + i，但是 + 这个操作符不适用于Integer对象，首先sum进行自动拆箱操作，进行数值相加操作，最后发生自动装箱操作转换成 Integer对象。其内部变化如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum = sum.intValue() + i;</span><br><span class="line">Integer sum = <span class="keyword">new</span> Integer(result);</span><br></pre></td></tr></table></figure></p>
+<p>在上面的循环中会创建将近4000个无用的Integer对象，在这样庞大的循环中，会降低程序的性能并且加重了垃圾回收的工作量。因此在我们编程时，需要注意到这一点。</p>
+<h2 id="重载与自动装箱"><a href="#重载与自动装箱" class="headerlink" title="重载与自动装箱"></a>重载与自动装箱</h2><hr>
+<p>当重载遇上自动装箱时，情况会比较有些复杂，可能会让人产生有些困惑。在1.5之前，value(int)和value(Integer)是完全不相同的方法，开发者不会因为传入是int还是Integer调用哪个方法困惑，但是由于自动装箱和拆箱的引入，处理重载方法时稍微有点复杂。一个典型的例子就是ArrayList的remove方法，它有remove(index)和remove(Object)两种重载，我们可能会有一点小小的困惑，其实这种困惑是可以验证并解开的，通过下面的例子我们可以看到，当出现这种情况时，不会发生自动装箱操作。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"method with primitive argument"</span>);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">(Integer num)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"method with wrapper argument"</span>);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//calling overloaded method</span></span><br><span class="line">AutoboxingTest autoTest = <span class="keyword">new</span> AutoboxingTest();</span><br><span class="line"><span class="keyword">int</span> value = <span class="number">3</span>;</span><br><span class="line">autoTest.test(value); <span class="comment">//no autoboxing </span></span><br><span class="line">Integer iValue = value;</span><br><span class="line">autoTest.test(iValue); <span class="comment">//no autoboxing</span></span><br><span class="line"> </span><br><span class="line">Output:</span><br><span class="line">method with primitive argument</span><br><span class="line">method with wrapper argument</span><br></pre></td></tr></table></figure></p>
+<h2 id="要注意的事项"><a href="#要注意的事项" class="headerlink" title="要注意的事项"></a>要注意的事项</h2><hr>
+<p><strong>对象相等比较</strong></p>
+<p>这是一个比较容易出错的地方，”==“可以用于原始值进行比较，也可以用于对象进行比较，当用于对象与对象之间比较时，比较的不是对象代表的值，而是检查两个对象是否是同一对象，这个比较过程中没有自动装箱发生。进行对象值比较不应该使用”==“，而应该使用对象对应的equals方法。看一个能说明问题的例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AutoboxingTest</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Example 1: == comparison pure primitive – no autoboxing</span></span><br><span class="line">        <span class="keyword">int</span> i1 = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i2 = <span class="number">1</span>;</span><br><span class="line">        System.out.println(<span class="string">"i1==i2 : "</span> + (i1 == i2)); <span class="comment">// true</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Example 2: equality operator mixing object and primitive</span></span><br><span class="line">        Integer num1 = <span class="number">1</span>; <span class="comment">// autoboxing</span></span><br><span class="line">        <span class="keyword">int</span> num2 = <span class="number">1</span>;</span><br><span class="line">        System.out.println(<span class="string">"num1 == num2 : "</span> + (num1 == num2)); <span class="comment">// true</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Example 3: special case - arises due to autoboxing in Java</span></span><br><span class="line">        Integer obj1 = <span class="number">1</span>; <span class="comment">// autoboxing will call Integer.valueOf()</span></span><br><span class="line">        Integer obj2 = <span class="number">1</span>; <span class="comment">// same call to Integer.valueOf() will return same</span></span><br><span class="line">                            <span class="comment">// cached Object</span></span><br><span class="line"> </span><br><span class="line">        System.out.println(<span class="string">"obj1 == obj2 : "</span> + (obj1 == obj2)); <span class="comment">// true</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// Example 4: equality operator - pure object comparison</span></span><br><span class="line">        Integer one = <span class="keyword">new</span> Integer(<span class="number">1</span>); <span class="comment">// no autoboxing</span></span><br><span class="line">        Integer anotherOne = <span class="keyword">new</span> Integer(<span class="number">1</span>);</span><br><span class="line">        System.out.println(<span class="string">"one == anotherOne : "</span> + (one == anotherOne)); <span class="comment">// false</span></span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">Output:</span><br><span class="line">i1==i2 : <span class="keyword">true</span></span><br><span class="line">num1 == num2 : <span class="keyword">true</span></span><br><span class="line">obj1 == obj2 : <span class="keyword">true</span></span><br><span class="line">one == anotherOne : <span class="keyword">false</span></span><br></pre></td></tr></table></figure></p>
+<p>值得注意的是第三个小例子，这是一种极端情况。obj1和obj2的初始化都发生了自动装箱操作。但是处于节省内存的考虑，JVM会缓存-128到127的Integer对象。因为obj1和obj2实际上是同一个对象。所以使用”==“比较返回true。</p>
+<p><strong>容易混乱的对象和原始数据值</strong></p>
+<p>另一个需要避免的问题就是混乱使用对象和原始数据值，一个具体的例子就是当我们在一个原始数据值与一个对象进行比较时，如果这个对象没有进行初始化或者为Null，在自动拆箱过程中obj.xxxValue，会抛出NullPointerException,如下面的代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Integer count;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//NullPointerException on unboxing</span></span><br><span class="line"><span class="keyword">if</span>( count &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">  System.out.println(<span class="string">"Count is not started yet"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>缓存的对象</strong></p>
+<p>这个问题就是我们上面提到的极端情况，在Java中，会对-128到127的Integer对象进行缓存，当创建新的Integer对象时，如果符合这个这个范围，并且已有存在的相同值的对象，则返回这个对象，否则创建新的Integer对象。</p>
+<p>在Java中另一个节省内存的例子就是字符串常量池,感兴趣的同学可以了解一下。</p>
+<p><strong>生成无用对象增加GC压力</strong></p>
+<p>因为自动装箱会隐式地创建对象，像前面提到的那样，如果在一个循环体中，会创建无用的中间对象，这样会增加GC（Garbage Collection，垃圾收集）压力，拉低程序的性能。所以在写循环时一定要注意代码，避免引入不必要的自动装箱操作。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><hr>
-<p>代码中的注释已经把代码解释的非常详细了，如果还有不理解的地方欢迎在文章下方评论或戳博客中的联系方式联系我。<br>注：以上解析均为个人理解，如有不妥或错误望指正。</p>
+<p>自动拆装箱机制的引入极大的方便了程序的编写，虽然同是也增加了一些问题，不过只要注意上述事项，就可以很好的使用自动拆装箱机制以及应对相关问题。</p>
+<p>参考文章：<a href="http://javarevisited.blogspot.com/2012/07/auto-boxing-and-unboxing-in-java-be.html" target="_blank" rel="external">javarevisited</a></p>
 
         
         </div>
@@ -339,7 +336,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
             
     
-        <a href="http://risekyle.github.io/2017/06/16/八大排序算法（一）—— 直接插入排序/#comments" class="article-comment-link">评论</a>
+        <a href="http://risekyle.github.io/2017/07/05/Java自动拆装箱机制/#comments" class="article-comment-link">评论</a>
     
 
         </footer>
@@ -348,19 +345,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/2017/06/18/还有这种操作？—— eclipse篇/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    还有这种操作？—— eclipse 篇
-                
-            </div>
-        </a>
     
-    
-        <a href="/2017/01/16/Java吸血鬼数字（高效版详解）/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2017/06/18/还有这种操作？—— eclipse篇/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Java 吸血鬼数字（高效版详解）</div>
+            <div class="article-nav-title">还有这种操作？—— eclipse 篇</div>
         </a>
     
 </nav>

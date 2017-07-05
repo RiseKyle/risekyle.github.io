@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>简洁强大的 Hexo 主题 Icarus | RiseKyle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="最近把博客主题更换为 icarus，作者是 PPOffice。这个主题界面简洁，具有分类、归档、导航等功能，非常适合博文较多的博主整理自己的博客。网上该主题的资料不多，github 上的文档又是纯英文的，所以我就翻译了搬运过来，供大家参考。
+主题预览：
+
+正文
+安装
+1.在 Hexo 根目录下，输入指令克隆 Icarus 到 theme/icarus：12$ git clone https://g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简洁强大的 Hexo 主题 Icarus">
+<meta property="og:url" content="http://risekyle.github.io/2017/01/16/简洁强大的Hexo主题Icarus/index.html">
+<meta property="og:site_name" content="RiseKyle">
+<meta property="og:description" content="最近把博客主题更换为 icarus，作者是 PPOffice。这个主题界面简洁，具有分类、归档、导航等功能，非常适合博文较多的博主整理自己的博客。网上该主题的资料不多，github 上的文档又是纯英文的，所以我就翻译了搬运过来，供大家参考。
+主题预览：
+
+正文
+安装
+1.在 Hexo 根目录下，输入指令克隆 Icarus 到 theme/icarus：12$ git clone https://g">
+<meta property="og:image" content="https://camo.githubusercontent.com/24d46b3a8e2c149a6cd7a71e05cc1e0b854add60/687474703a2f2f70706f66666963652e6769746875622e696f2f6865786f2d7468656d652d6963617275732f67616c6c6572792f707265766965772e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/eae8bb22dfe26c087d8350653b8abc90f07ad794/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383739373637306235312e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/eee642990ba60d6660327cec69311b0a21626920/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383763646437386361652e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/29244be9b08db085cc83244e9add325eaf5d0945/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373362663136383064312e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/24a17dd17b3cb6d5dcd50e714e324394c65a8e6d/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383763366265323739662e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/4e61568beed3ebd094281fc38bb3532bcbdc8b49/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30342f30372f353730363834363761643565612e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/cbf83207d4c75ff40dd83aef1f262304216fc1a3/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383833636464326531372e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/ef8254f2098518a22e600c027a22e3b461fa6b36/687474703a2f2f70706f66666963652e6769746875622e696f2f6865786f2d7468656d652d6963617275732f67616c6c6572792f73776966747970655f696e7374616c6c2e6a7067">
+<meta property="og:image" content="https://camo.githubusercontent.com/78e5c92fb772bf4836f6bc14796c8ebc56c9685e/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383834613165326263362e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/829260ee536b0ecbda9463ff6c6bf3605263cd5b/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383835333636653739632e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/29521bc39a43c6e83c4259a83385db8c73776e64/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373934636637653262332e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/c7965cc1af1f87d2efd341d05e11ef972474b375/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383835616530646161632e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/b419c0a2761aeb61cc4c91ee73754267224c1931/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373863326464623166312e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/7334695fc3e50d43d78e74b28ec5e84f1d0eaa28/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373863383930386463302e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/ce4822f381a9a94f97af9510bad223488686796d/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373863646434316635322e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/aae806d30865d142f379afb5422a9b564cdb9896/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373864383135643838302e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/8f9a049d4243f38a91d573c2a3557efae9ef62af/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f31302f32302f353830386366333935646664632e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/8add4bee1fae193cd7e77f0132b3c6a70b9679f5/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f31302f32302f353830386366333930333035362e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/8ebb1095d950ff352476829fab5b487a3ab02fbf/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373836613738653136302e706e67">
+<meta property="og:image" content="https://camo.githubusercontent.com/05314def46066aef152b8d19ba39ed8093309093/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373836613738376630362e706e67">
+<meta property="og:updated_time" content="2017-01-16T06:28:39.438Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="简洁强大的 Hexo 主题 Icarus">
+<meta name="twitter:description" content="最近把博客主题更换为 icarus，作者是 PPOffice。这个主题界面简洁，具有分类、归档、导航等功能，非常适合博文较多的博主整理自己的博客。网上该主题的资料不多，github 上的文档又是纯英文的，所以我就翻译了搬运过来，供大家参考。
+主题预览：
+
+正文
+安装
+1.在 Hexo 根目录下，输入指令克隆 Icarus 到 theme/icarus：12$ git clone https://g">
+<meta name="twitter:image" content="https://camo.githubusercontent.com/24d46b3a8e2c149a6cd7a71e05cc1e0b854add60/687474703a2f2f70706f66666963652e6769746875622e696f2f6865786f2d7468656d652d6963617275732f67616c6c6572792f707265766965772e706e67">
+    
+
+    
+        <link rel="alternate" href="/" title="RiseKyle" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+        <script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?7ecac19e96aea7fe7c4b5c149020ddbe";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">RiseKyle</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="http://7xtn8q.com1.z0.glb.clouddn.com/IMG_6637.JPG" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="http://7xtn8q.com1.z0.glb.clouddn.com/IMG_6637.JPG" />
+            <h2 id="name">RiseKyle</h2>
+            <h3 id="title">Not typical Java &amp; Android Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Chengdu, China</span>
+            <a id="follow" target="_blank" href="https://www.zhihu.com/people/kylezhang-46">zhihu</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                6
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                14
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/RiseKyle" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="http://weibo.com/kylezxy" target="_blank" title="weibo" class=tooltip>
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="weixin" class=tooltip>
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-简洁强大的Hexo主题Icarus" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            简洁强大的 Hexo 主题 Icarus
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2017/01/16/简洁强大的Hexo主题Icarus/">
+            <time datetime="2017-01-16T06:28:33.464Z" itemprop="datePublished">2017-01-16</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/github-搬运/">github 搬运</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/icarus/">icarus</a>, <a class="tag-link" href="/tags/搬运/">搬运</a>, <a class="tag-link" href="/tags/教程/">教程</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>最近把博客主题更换为 <a href="https://github.com/ppoffice/hexo-theme-icarus/" target="_blank" rel="external">icarus</a>，作者是 <strong>PPOffice</strong>。这个主题界面简洁，具有<strong>分类、归档、导航</strong>等功能，非常适合博文较多的博主整理自己的博客。网上该主题的资料不多，github 上的文档又是纯英文的，所以我就翻译了搬运过来，供大家参考。</p>
+<p>主题预览：</p>
+<p><img src="https://camo.githubusercontent.com/24d46b3a8e2c149a6cd7a71e05cc1e0b854add60/687474703a2f2f70706f66666963652e6769746875622e696f2f6865786f2d7468656d652d6963617275732f67616c6c6572792f707265766965772e706e67" alt="icarus预览图"></p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><hr>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><hr>
+<p>1.在 Hexo 根目录下，输入指令克隆 Icarus 到 <code>theme/icarus</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git</span><br><span class="line">themes/icarus</span><br></pre></td></tr></table></figure></p>
+<p>或 fork 本仓库，将其作为 git submodule 安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git submodule add https://github.com/&lt;your-username&gt;/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure></p>
+<p>2.修改博客配置文件 <code>_config.yml</code>，将 <code>theme</code> 更换为 <code>icarus</code> 来启动主题：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: icarus</span><br></pre></td></tr></table></figure></p>
+<p>3.将主题文件夹中的 <code>_config.yml.example</code> 重命名为 <code>_config.yml</code></p>
+<p>4.（可选）别忘了检查最新版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> themes/icarus</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure></p>
+<p>5.（可选）启动 <code>Insight-Search</code> 作为默认搜索，需要先安装 <code>hexo-generator-json-content</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure></p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><hr>
+<ul>
+<li>主题</li>
+</ul>
+<hr>
+<p>主题配置包括两部分：<code>menu</code> 和 <code>customize</code>：</p>
+<p><strong>Menu</strong></p>
+<hr>
+<p><img src="https://camo.githubusercontent.com/eae8bb22dfe26c087d8350653b8abc90f07ad794/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383739373637306235312e706e67" alt="Menu"></p>
+<p>菜单（导航栏）可以直接找到主页，归档，目录，自定义页面等。你可以通过简单地添加菜单名和链接来设置导航栏：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    Home: .</span><br><span class="line">    Archives: archives</span><br><span class="line">+   GitHub: https://github.com</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>同时支持绝对地址和相对地址</p>
+</blockquote>
+<p>如果你想启用 <code>Categories</code> 和 <code>Tags</code>，请把 <code>_source/categories</code> 和 <code>-source/tags</code> 文件夹复制到博客根目录下的 <code>source</code> 文件夹中，然后到 <code>_config.yml</code> 中的 <code>menu</code> 选项里添加如下配置（<strong>About 同理</strong>）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    Home: .</span><br><span class="line">    Archives: archives</span><br><span class="line">+   Categories: categories</span><br><span class="line">+   Tags: tags</span><br></pre></td></tr></table></figure></p>
+<p><strong>Customize</strong></p>
+<hr>
+<p>自定义配置控制你的主题外观。</p>
+<p><strong>logo</strong></p>
+<p>你可以使用自定义图片替换默认 logo。<code>width</code> 和 <code>height</code> 属性决定了 logo 的尺寸（in pixels），<code>url</code> 属性是 logo 图片的地址。你也可以通过设置 <code>enabled: false</code> 隐藏 logo。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">logo:</span><br><span class="line">    enabled: true</span><br><span class="line">    width: 165</span><br><span class="line">    height: 60</span><br><span class="line">    url: images/logo-header.png</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>width</code> 和 <code>height</code> 属性仅支持纯数字。<br>即便 <code>enabled: false</code> 时，也请保留 <code>width</code>、<code>height</code>、<code>url</code>属性值。</p>
+</blockquote>
+<p><strong>Profile</strong></p>
+<p><img src="https://camo.githubusercontent.com/eee642990ba60d6660327cec69311b0a21626920/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383763646437386361652e706e67" alt="Profile图片"></p>
+<p>这里用来简单地展示你的个人信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">profile:</span><br><span class="line">    enabled: true</span><br><span class="line">    avatar: css/images/avatar.png</span><br><span class="line">    gravatar: </span><br><span class="line">    author: PPOffice</span><br><span class="line">    author_title: Web Developer &amp; Designer</span><br><span class="line">    location: Harbin, China</span><br><span class="line">    follow: https://github.com/ppoffice/</span><br></pre></td></tr></table></figure></p>
+<p><strong>Highlight</strong></p>
+<p><img src="https://camo.githubusercontent.com/29244be9b08db085cc83244e9add325eaf5d0945/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373362663136383064312e706e67" alt="highlight"></p>
+<p>Icarus支持超过60种代码高亮，从 <a href="https://github.com/isagalaev/highlight.js" target="_blank" rel="external">Highlight.js</a> 中导入。你可以从 <code>icarus/source/css/_highlight</code> 文件夹中查看可选选项。</p>
+<p><strong>Sidebar</strong></p>
+<p>改变 sidebar 的位置，可选的有 <code>left</code> 和 <code>right</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sidebar: left</span><br></pre></td></tr></table></figure></p>
+<p><strong>Thumbnail（缩略图）</strong></p>
+<p>设置 <code>ture</code> 或 <code>false</code> 来开启或关闭该功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">thumbnail: true</span><br></pre></td></tr></table></figure></p>
+<p>如何添加为文章添加一个缩略图？<br>在 <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">front-matter</a> 中添加 <code>banner</code> 或 <code>thumbnail</code> 属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Hello World</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">+ thumbnail: https://example.com/image.jpg</span><br></pre></td></tr></table></figure></p>
+<p><strong>Favicon</strong></p>
+<p>给博客添加一个 favicon：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">favicon: favicon.png</span><br></pre></td></tr></table></figure></p>
+<p><strong>Social Links</strong></p>
+<p><img src="https://camo.githubusercontent.com/24a17dd17b3cb6d5dcd50e714e324394c65a8e6d/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383763366265323739662e706e67" alt="社交链接"></p>
+<p>设置链接名和链接地址来添加社交链接，仅可使用由 <a href="http://fontawesome.io/" target="_blank" rel="external">Fontawesom</a> 提供的图标（直接输入 <a href="http://fontawesome.io/" target="_blank" rel="external">Fontawesome</a> 中的图标名再添加地址即可）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">social_links:</span><br><span class="line">    github: https://github.com/ppoffice/hexo-theme-icarus</span><br><span class="line">+   youtube: https://youtube.com</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>确保链接地址不会空着，否则社交链接会失效。</p>
+</blockquote>
+<ul>
+<li>控件</li>
+</ul>
+<hr>
+<p>Icarus 目前支持的控件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">widgets:</span><br><span class="line">    - recent_posts</span><br><span class="line">    - category</span><br><span class="line">    - archive</span><br><span class="line">    - tag</span><br><span class="line">    - tagcloud</span><br><span class="line">    - links</span><br></pre></td></tr></table></figure></p>
+<p><strong>Recent Posts</strong></p>
+<p>在 sidebar（边条）上展示最近五篇文章。</p>
+<p><strong>Category</strong></p>
+<p>在 sidebar（边条）上展示目录。</p>
+<p><strong>Archive</strong></p>
+<p>在 sidebar（边条）上展示近几个月文章的归档。</p>
+<p><strong>Tag</strong></p>
+<p>在 sidebar（边条）上展示标签。</p>
+<p><strong>Tag Cloud</strong></p>
+<p>在 sidebar（边条）上展示标签云。</p>
+<p><strong>Links</strong></p>
+<p>在 sidebar（边条）上展示自定义链接。可以在 <code>Miscellaneous Configurations</code> 中设置自定义链接。</p>
+<ul>
+<li>搜索</li>
+</ul>
+<hr>
+<p><strong>Insight Search（笔者选用的是此搜索）</strong></p>
+<p><img src="https://camo.githubusercontent.com/4e61568beed3ebd094281fc38bb3532bcbdc8b49/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30342f30372f353730363834363761643565612e706e67" alt="Insight Search"></p>
+<p>按 <code>Esc</code> 键关闭搜索框，通过 <code>↑</code>，<code>↓</code> 浏览搜素结果，<code>Enter</code> 键显示搜索结果</p>
+<pre><code>- links
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insight: true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注意</strong>：需要先安装 <code>hexo-generator-json-content</code> 才能使用 Insight Search。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -S hexo-generator-json-content</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>Swiftype（此搜索要收费）</strong></p>
+<p><img src="https://camo.githubusercontent.com/cbf83207d4c75ff40dd83aef1f262304216fc1a3/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383833636464326531372e706e67" alt="Swiftype"></p>
+<p>先注册一个 <a href="https://swiftype.com/" target="_blank" rel="external">Swiftype</a> 账号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">swiftype: XXXXXXXXXXXXXXXXXXXX</span><br></pre></td></tr></table></figure></p>
+<p><code>install key</code> 可以在下面的页面中找到：</p>
+<p><img src="https://camo.githubusercontent.com/ef8254f2098518a22e600c027a22e3b461fa6b36/687474703a2f2f70706f66666963652e6769746875622e696f2f6865786f2d7468656d652d6963617275732f67616c6c6572792f73776966747970655f696e7374616c6c2e6a7067" alt="install key"></p>
+<p><strong>Baidu(主题作者不推荐）</strong></p>
+<p>添加这个就应该可以使用了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baidu: true</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>评论</li>
+</ul>
+<hr>
+<p><strong>Disqus</strong></p>
+<p><img src="https://camo.githubusercontent.com/78e5c92fb772bf4836f6bc14796c8ebc56c9685e/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383834613165326263362e706e67" alt="Disqus"></p>
+<p>先注册 <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> 账号。再在配置中输入 shortname，shortname 可以在图中页面找到。</p>
+<p><img src="https://camo.githubusercontent.com/829260ee536b0ecbda9463ff6c6bf3605263cd5b/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383835333636653739632e706e67" alt="shortname"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">disqus: hexo-theme-icarus</span><br></pre></td></tr></table></figure></p>
+<p><strong>Duoshuo（笔者使用的此评论）</strong></p>
+<p><img src="https://camo.githubusercontent.com/29521bc39a43c6e83c4259a83385db8c73776e64/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373934636637653262332e706e67" alt="Duoshuo"></p>
+<p>同样也是先注册 <a href="http://duoshuo.com/" target="_blank" rel="external">Duoshuo</a> 账号，再输入 shortname。</p>
+<p><img src="https://camo.githubusercontent.com/c7965cc1af1f87d2efd341d05e11ef972474b375/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30322f30382f353662383835616530646161632e706e67" alt="Duoshuo"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duoshuo: hexo-theme-icarus</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>分享</li>
+</ul>
+<hr>
+<p>分享按钮会在文章的末尾，评论框的上方显示。Icarus 提供几种分享插件，每一种都已经根据主题进行了风格的调整。</p>
+<p>可选的有：</p>
+<ul>
+<li>default</li>
+<li>addtoany</li>
+<li>jiathis</li>
+<li>bdshare</li>
+</ul>
+<p><strong>Default</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">share: default</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://camo.githubusercontent.com/b419c0a2761aeb61cc4c91ee73754267224c1931/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373863326464623166312e706e67" alt="Default"></p>
+<p><strong>AddToAny</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">share: addtoany</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://camo.githubusercontent.com/7334695fc3e50d43d78e74b28ec5e84f1d0eaa28/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373863383930386463302e706e67" alt="AddToAny"></p>
+<p><strong>JiaThis</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">share: jiathis</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://camo.githubusercontent.com/ce4822f381a9a94f97af9510bad223488686796d/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373863646434316635322e706e67" alt="JiaThis"></p>
+<p><strong>Baidu Share(笔者使用的百度分享）</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">share: bdshare</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://camo.githubusercontent.com/aae806d30865d142f379afb5422a9b564cdb9896/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373864383135643838302e706e67" alt="bdshare"></p>
+<ul>
+<li>插件</li>
+</ul>
+<hr>
+<p><strong>lightgallery</strong></p>
+<p><a href="https://sachinchoolur.github.io/lightgallery.js/" target="_blank" rel="external">lightgallery.js</a> 是一个全特性 JavaScript lightbox gallery ，不需要任何依赖。设置 <code>true</code> 来启用该功能。</p>
+<p><img src="https://camo.githubusercontent.com/8f9a049d4243f38a91d573c2a3557efae9ef62af/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f31302f32302f353830386366333935646664632e706e67" alt="lightgallery"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lightgallery: true</span><br></pre></td></tr></table></figure></p>
+<p><strong>Justified Gallery</strong></p>
+<p><a href="https://sachinchoolur.github.io/lightgallery.js/" target="_blank" rel="external">Justified Gallery</a> 是一个 JQuery 插件，它允许用户创建高质量的图片整理图库。设置 <code>true</code> 再在你的图片两边加上 <code>&lt;div class=&quot;justified-gallery&quot;&gt;&lt;/div&gt;</code> 就能启用该功能。</p>
+<p><img src="https://camo.githubusercontent.com/8add4bee1fae193cd7e77f0132b3c6a70b9679f5/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f31302f32302f353830386366333930333035362e706e67" alt="Justified Gallery"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justifiedgallery: true</span><br></pre></td></tr></table></figure></p>
+<p><strong>Google Analytics（国内不是很方便，你懂的）</strong><br>在配置中输入谷歌分析的 tracking ID 为你的站点启用谷歌提供的网站分析功能。在如下的页面中可以找到 tracking ID。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">google_analytics: UA-66666666-6</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://camo.githubusercontent.com/8ebb1095d950ff352476829fab5b487a3ab02fbf/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373836613738653136302e706e67" alt="tracking ID"></p>
+<p><strong>Baidu Analytics（笔者使用的百度分析）</strong></p>
+<p>在配置中输入百度分析的 hash key 可以启用该功能。百度分析的 hash key 可以在 <code>Get JS</code> 框中找到。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">baidu_analytics: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://camo.githubusercontent.com/05314def46066aef152b8d19ba39ed8093309093/68747470733a2f2f6f6f6f2e306f302e6f6f6f2f323031362f30312f31342f353639373836613738376630362e706e67" alt="hash key"></p>
+<ul>
+<li>其它</li>
+</ul>
+<hr>
+<p><strong>Open Graph</strong></p>
+<p>关于 Open Graph：<a href="https://en.wikipedia.org/wiki/Facebook_Platform#Open_Graph_protocol" target="_blank" rel="external">Open Graph protocol</a><br>可设置的选项：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">open_graph:</span><br><span class="line">    fb_app_id:</span><br><span class="line">    fb_admins:</span><br><span class="line">    twitter_id:</span><br><span class="line">    google_plus:</span><br></pre></td></tr></table></figure></p>
+<p><strong>Links</strong></p>
+<p>向 sidebar 添加友情链接。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">links:</span><br><span class="line">    Hexo: http://hexo.io</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>常见问题</li>
+</ul>
+<hr>
+<p><strong>如何修改站点的语言？</strong></p>
+<p>编辑博客根目录下的 <code>_config.yml</code>，进行如下更改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- language: en</span><br><span class="line">+ language: zh-CN</span><br></pre></td></tr></table></figure></p>
+<p>可以在 <code>icarus/languages</code> 文件夹下找到可使用的语言。</p>
+<p><strong>如何为文章添加摘要？</strong><br>在文章中添加 <code>&lt;!-- more --&gt;</code> 标签，在上传内容前该标签会被标记为摘要。</p>
+<p><strong>为什么我的更改没有部署到 Github 页面上？</strong><br>在 <code>hexo deploy</code> 之前，运行如下指令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ rm -r .deploy_git</span><br></pre></td></tr></table></figure></p>
+<p><strong>怎么为指定文章、页面添加元标签（meta tags）？</strong></p>
+<p>通过 font-mater 为文章、页面添加 meta tags。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: test post</span><br><span class="line">date: 2015-01-26 21:55:37</span><br><span class="line">tags:</span><br><span class="line">comments: false</span><br><span class="line">+ meta:</span><br><span class="line">+ - name=&quot;robots&quot;;content=&quot;noindex, follow&quot;</span><br><span class="line">+ - name=&quot;another-meta&quot;;value=&quot;hello world&quot;;enabled=false</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="external">hexo-theme-icarus</a><br><a href="http://www.jianshu.com/p/3e341d86acd2" target="_blank" rel="external">hexo博客换主题–icarus</a></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+</div>
+
+            
+    
+        <a href="http://risekyle.github.io/2017/01/16/简洁强大的Hexo主题Icarus/#comments" class="article-comment-link">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2017/01/16/Java吸血鬼数字（高效版详解）/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Java 吸血鬼数字（高效版详解）
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2017/01/10/关于本博客/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">关于本博客</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="uyan_frame"></div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/07/05/Java自动拆装箱机制/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Java进阶之路/">Java进阶之路</a></p>
+                            <p class="item-title"><a href="/2017/07/05/Java自动拆装箱机制/" class="title">Java自动拆装箱机制</a></p>
+                            <p class="item-date"><time datetime="2017-07-05T08:32:28.000Z" itemprop="datePublished">2017-07-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/18/还有这种操作？—— eclipse篇/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/开发工具使用技巧/">开发工具使用技巧</a></p>
+                            <p class="item-title"><a href="/2017/06/18/还有这种操作？—— eclipse篇/" class="title">还有这种操作？—— eclipse 篇</a></p>
+                            <p class="item-date"><time datetime="2017-06-18T15:05:50.779Z" itemprop="datePublished">2017-06-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/06/16/八大排序算法（一）—— 直接插入排序/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a></p>
+                            <p class="item-title"><a href="/2017/06/16/八大排序算法（一）—— 直接插入排序/" class="title">八大排序算法（一）—— 直接插入排序</a></p>
+                            <p class="item-date"><time datetime="2017-06-16T08:44:11.636Z" itemprop="datePublished">2017-06-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/16/Java吸血鬼数字（高效版详解）/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/数据结构与算法/">数据结构与算法</a></p>
+                            <p class="item-title"><a href="/2017/01/16/Java吸血鬼数字（高效版详解）/" class="title">Java 吸血鬼数字（高效版详解）</a></p>
+                            <p class="item-date"><time datetime="2017-01-16T06:32:46.267Z" itemprop="datePublished">2017-01-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/01/16/简洁强大的Hexo主题Icarus/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/github-搬运/">github 搬运</a></p>
+                            <p class="item-title"><a href="/2017/01/16/简洁强大的Hexo主题Icarus/" class="title">简洁强大的 Hexo 主题 Icarus</a></p>
+                            <p class="item-date"><time datetime="2017-01-16T06:28:33.464Z" itemprop="datePublished">2017-01-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java进阶之路/">Java进阶之路</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/github-搬运/">github 搬运</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/开发工具使用技巧/">开发工具使用技巧</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据结构与算法/">数据结构与算法</a><span class="category-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/使用技巧/">使用技巧</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内容/">内容</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吸血鬼数字/">吸血鬼数字</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/排序/">排序</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搬运/">搬运</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/搭建/">搭建</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/教程/">教程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/自动拆装箱/">自动拆装箱</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/进阶/">进阶</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/使用技巧/" style="font-size: 10px;">使用技巧</a> <a href="/tags/内容/" style="font-size: 10px;">内容</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/吸血鬼数字/" style="font-size: 10px;">吸血鬼数字</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/搬运/" style="font-size: 10px;">搬运</a> <a href="/tags/搭建/" style="font-size: 10px;">搭建</a> <a href="/tags/教程/" style="font-size: 10px;">教程</a> <a href="/tags/算法/" style="font-size: 20px;">算法</a> <a href="/tags/自动拆装箱/" style="font-size: 10px;">自动拆装箱</a> <a href="/tags/进阶/" style="font-size: 10px;">进阶</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2017 RiseKyle<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2136828"></script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
